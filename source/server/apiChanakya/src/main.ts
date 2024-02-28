@@ -5,8 +5,21 @@
 
 import express from 'express';
 import * as path from 'path';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import chanakyaRouter from './new-chanakya/chanakya-routes';
+import leaderRouter from './Leaders/leaders-routes';
+
+mongoose.connect(
+  'mongodb+srv://jamster:Soundar@jamsterapp.cuxjnde.mongodb.net/young-chanakya'
+);
 
 const app = express();
+app.use(express.json());
+app.use(cors());
+
+app.use('/api/chanakya', chanakyaRouter);
+app.use('/api/leader', leaderRouter);
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
