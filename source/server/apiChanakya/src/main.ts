@@ -9,6 +9,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import chanakyaRouter from './new-chanakya/chanakya-routes';
 import leaderRouter from './Leaders/leaders-routes';
+import authRoutes from './auth-user/authUser.routes';
 
 mongoose.connect(
   'mongodb+srv://jamster:Soundar@jamsterapp.cuxjnde.mongodb.net/young-chanakya'
@@ -18,6 +19,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.use('/api/users', authRoutes);
 app.use('/api/chanakya', chanakyaRouter);
 app.use('/api/leader', leaderRouter);
 
