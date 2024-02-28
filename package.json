@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "api":"npx nx run apiChanakya:serve"
+    "api": "npx nx run apiChanakya:serve"
   },
   "private": true,
   "devDependencies": {
@@ -55,6 +55,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "antd": "^5.14.2",
     "axios": "^1.6.0",
     "cors": "^2.8.5",
     "express": "^4.18.1",
