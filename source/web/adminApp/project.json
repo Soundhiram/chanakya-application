@@ -1,0 +1,8 @@
+{
+  "name": "adminApp",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "source/web/adminApp/src",
+  "projectType": "application",
+  "targets": {},
+  "tags": []
+}
