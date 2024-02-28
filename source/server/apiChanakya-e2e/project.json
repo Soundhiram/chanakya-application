@@ -1,0 +1,16 @@
+{
+  "name": "apiChanakya-e2e",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "implicitDependencies": ["apiChanakya"],
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "options": {
+        "jestConfig": "source/server/apiChanakya-e2e/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

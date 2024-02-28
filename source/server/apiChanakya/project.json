@@ -1,0 +1,24 @@
+{
+  "name": "apiChanakya",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "source/server/apiChanakya/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "apiChanakya:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "apiChanakya:build:development"
+        },
+        "production": {
+          "buildTarget": "apiChanakya:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
