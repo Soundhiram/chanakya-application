@@ -36,7 +36,18 @@
      left: 0;
    }
    
-   
+   @media (max-width: 768px){
+    .content{
+    }
+  }
+
+  @media (max-width: 480px){
+.content{
+  padding: 22px;
+
+}
+
+}
    
    
    
