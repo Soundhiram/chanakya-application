@@ -1,0 +1,42 @@
+.fixed-header {
+     background: #333;
+     color: #fff;
+     text-align: center;
+     height: 140px;
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     z-index: 1000; 
+     width: 100%;
+   }
+   
+   .content {
+     background-color: white;
+     overflow-y: auto;
+     padding-left: 65px;
+     padding-right: 65px; 
+     top: 140px;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     padding-top: 50px;
+     padding-bottom: 50px;
+ }
+   
+ .footer {
+     background: #333;
+     color: #fff;
+     text-align: center;
+     padding: 10px 0;
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+   }
+   
+   
+   
+   
+   

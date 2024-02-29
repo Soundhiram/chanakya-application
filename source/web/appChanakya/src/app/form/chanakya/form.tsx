@@ -3,11 +3,9 @@ import { Form, Input, Button } from 'antd';
 import axios from 'axios';
 import { Chanakya } from '../../../interface/leaderInterface';
 
-interface ChanakyaProps {
-  onClose: () => void;
-}
 
-const Chanakyas: React.FC<ChanakyaProps> = ({ onClose }) => {
+
+const Chanakyas: React.FC= () => {
   const onFinish = async (values: Chanakya) => {
     try {
       const response = await axios.post(
@@ -15,7 +13,6 @@ const Chanakyas: React.FC<ChanakyaProps> = ({ onClose }) => {
         values
       );
       console.log('Leader created:', response.data);
-      onClose(); 
 
     } catch (error) {
       console.error('Error creating leader:', error);

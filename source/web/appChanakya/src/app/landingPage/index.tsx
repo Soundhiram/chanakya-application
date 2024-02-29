@@ -1,29 +1,13 @@
-import React, { useState } from 'react';
-import { Button, Card, Col, Row } from 'antd';
-import { LoginOutlined } from '@ant-design/icons';
+import React from 'react';
+import { Card, Col, Row } from 'antd';
 import Chanakya from '../form/chanakya/form';
 import Leaders from '../form/leaders.tsx/form';
 import './style.less';
+import Chanakyas from '../form/chanakya/form';
 
 export const LandingPage: React.FC = () => {
-  const [chanakyaModalVisible, setChanakyaModalVisible] = useState(false);
-  const [leaderFormModalVisible, setLeaderFormModalVisible] = useState(false);
-
-  const showChanakyaModal = () => {
-    setChanakyaModalVisible(true);
-  };
-
-  const showLeaderFormModal = () => {
-    setLeaderFormModalVisible(true);
-  };
-
-  const handleModalCancel = () => {
-    setChanakyaModalVisible(false);
-    setLeaderFormModalVisible(false);
-  };
-
   return (
-    <div>
+    <div className='container'>
       <div className="head-div">
         <h1 className="head-h1">Launching Soon</h1>
       </div>
@@ -44,14 +28,8 @@ export const LandingPage: React.FC = () => {
                 Are you a leader in your field? We introduce you to the World.
               </p>
             </div>
-            <div className="btn-div">
-              <p>Register Now</p>
-              <Button className="btn-element" onClick={showChanakyaModal}>
-                <LoginOutlined />
-              </Button>
-            </div>
+            <Chanakyas />
           </Card>
-          {chanakyaModalVisible && <Chanakya onClose={handleModalCancel} />}
         </Col>
 
         <Col xl={12} lg={12} md={12} sm={24} xs={24}>
@@ -63,14 +41,8 @@ export const LandingPage: React.FC = () => {
                 details here.
               </p>
             </div>
-            <div className="btn-div">
-              <p>Register Now</p>
-              <Button className="btn-element" onClick={showLeaderFormModal}>
-                <LoginOutlined />
-              </Button>
-            </div>
+            <Leaders />
           </Card>
-          {leaderFormModalVisible && <Leaders onClose={handleModalCancel} />}
         </Col>
       </Row>
     </div>

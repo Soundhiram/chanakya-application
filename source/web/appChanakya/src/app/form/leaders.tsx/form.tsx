@@ -3,12 +3,9 @@ import { Form, Input, Button } from 'antd';
 import { Leader } from '../../../interface/leaderInterface';
 import axios from 'axios';
 
-interface LeadersProps {
-  onClose: () => void;
-}
 
 
-const Leaders: React.FC<LeadersProps> = ({ onClose }) => {
+const Leaders: React.FC= () => {
     const onFinish = async (values: Leader) => {
         try {
           const response = await axios.post('http://localhost:3333/api/leader/create', values);
