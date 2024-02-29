@@ -3,6 +3,7 @@ import { Button, Card, Col, Row, Modal } from 'antd';
 import { LoginOutlined } from '@ant-design/icons';
 import Chanakya from '../form/chanakya/form';
 import Leaders from '../form/leaders.tsx/form';
+import './style.less'
 
 export const LandingPage = () => {
   const [chanakyaModalVisible, setChanakyaModalVisible] = useState(false);
