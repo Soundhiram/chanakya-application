@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "api": "npx nx run apiChanakya:serve",
-    "web": "npx nx run appChanakya:serve"
+    "web": "npx nx run appChanakya:serve",
+    "admin":"npx nx run adminApp:serve"
   },
   "private": true,
   "devDependencies": {

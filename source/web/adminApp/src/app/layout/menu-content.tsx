@@ -61,37 +61,27 @@ export const MenuContent: React.FC<MenuContentProps> = ({ type }) => {
           </Link>
         </Menu.Item>
 
-        <Menu.Item key="form" style={{ paddingLeft: '35px' }}>
-          <Link
-            to="/home/influencerform"
-            className="icon-primary width-adjustment"
-          >
-            <>
-              <Icon type={FormOutlined} className="icon-primary" />
-              <span className="color-primary side-nav-text">Influencer-Form</span>
-            </>
-          </Link>
-        </Menu.Item>
+      
 
-        <Menu.Item key="list" style={{ paddingLeft: '35px' }}>
+        <Menu.Item key="chanakya" style={{ paddingLeft: '35px' }}>
           <Link
-            to="/home/influencerlist"
+            to="/home/chanakyalist"
             className="icon-primary width-adjustment"
           >
             <>
               <Icon type={UnorderedListOutlined} className="icon-primary" />
-              <span className="color-primary side-nav-text">Influencer-List</span>
+              <span className="color-primary side-nav-text">Chanakya-List</span>
             </>
           </Link>
         </Menu.Item>
-        <Menu.Item key="ShareFeedback" style={{ paddingLeft: '35px' }}>
+        <Menu.Item key="leader" style={{ paddingLeft: '35px' }}>
           <Link
-            to="/home/sharefeedback"
+            to="/home/leaderlist"
             className="icon-primary width-adjustment"
           >
             <>
               <Icon type={UnorderedListOutlined} className="icon-primary" />
-              <span className="color-primary side-nav-text">Feedback</span>
+              <span className="color-primary side-nav-text">Leader-List</span>
             </>
           </Link>
         </Menu.Item>

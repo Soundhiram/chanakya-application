@@ -5,6 +5,7 @@ const { join } = require('path');
 module.exports = {
   output: {
     path: join(__dirname, '../../../dist/source/web/adminApp'),
+    
   },
   devServer: {
     port: 4201,
