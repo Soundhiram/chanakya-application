@@ -17,4 +17,7 @@ export interface Chanakya {
     city: string;
     socialMedia: string;
   }
+export interface Subscriber {
+    email: string;
+  }
   

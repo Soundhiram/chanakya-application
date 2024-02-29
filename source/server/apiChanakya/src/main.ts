@@ -10,6 +10,7 @@ import mongoose from 'mongoose';
 import chanakyaRouter from './new-chanakya/chanakya-routes';
 import leaderRouter from './Leaders/leaders-routes';
 import authRoutes from './auth-user/authUser.routes';
+import subscriberRouter from './subscriber/subscriber-routes';
 
 mongoose.connect(
   'mongodb+srv://jamster:Soundar@jamsterapp.cuxjnde.mongodb.net/young-chanakya'
@@ -22,6 +23,7 @@ app.use(cors());
 app.use('/api/users', authRoutes);
 app.use('/api/chanakya', chanakyaRouter);
 app.use('/api/leader', leaderRouter);
+app.use('/api/subscriber', subscriberRouter);
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
