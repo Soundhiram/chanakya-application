@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Button, Card, Col, Row, Modal } from 'antd';
+import { Button, Card, Col, Row } from 'antd';
 import { LoginOutlined } from '@ant-design/icons';
 import Chanakya from '../form/chanakya/form';
 import Leaders from '../form/leaders.tsx/form';
-import './style.less'
+import './style.less';
 
-export const LandingPage = () => {
+export const LandingPage: React.FC = () => {
   const [chanakyaModalVisible, setChanakyaModalVisible] = useState(false);
   const [leaderFormModalVisible, setLeaderFormModalVisible] = useState(false);
 
@@ -51,6 +51,7 @@ export const LandingPage = () => {
               </Button>
             </div>
           </Card>
+          {chanakyaModalVisible && <Chanakya onClose={handleModalCancel} />}
         </Col>
 
         <Col xl={12} lg={12} md={12} sm={24} xs={24}>
@@ -69,26 +70,9 @@ export const LandingPage = () => {
               </Button>
             </div>
           </Card>
+          {leaderFormModalVisible && <Leaders onClose={handleModalCancel} />}
         </Col>
       </Row>
-
-      <Modal
-        title="Register as Chanakya"
-        visible={chanakyaModalVisible}
-        onCancel={handleModalCancel}
-        footer={null} 
-      >
-        <Chanakya onClose={handleModalCancel} />
-      </Modal>
-
-      <Modal
-        title="Register as Leader"
-        visible={leaderFormModalVisible}
-        onCancel={handleModalCancel}
-        footer={null}
-      >
-        <Leaders onClose={handleModalCancel} />
-      </Modal>
     </div>
   );
 };
