@@ -129,7 +129,7 @@ const Leaders: React.FC = () => {
 
         <Form.Item>
           <div className="btn-form">
-            <Button type="primary" htmlType="submit" className="btn-submit">
+            <Button type="default" htmlType="submit" className="btn-submit">
               Submit
             </Button>
           </div>

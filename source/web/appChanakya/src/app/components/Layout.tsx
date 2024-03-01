@@ -7,7 +7,7 @@ const { Header, Content, Footer } = Layout;
 const AppLayout: React.FC = () => {
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Header className="fixed-header">
+      {/* <Header className="fixed-header">
         <div>
           <Row>
           <Col xl={12} lg={12} md={12} sm={24} xs={24}>
@@ -21,7 +21,7 @@ const AppLayout: React.FC = () => {
             </Col>
           </Row>
         </div>
-      </Header>
+      </Header> */}
       <Content className="content">
         <LandingPage/>
       </Content>

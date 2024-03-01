@@ -33,7 +33,6 @@ const Chanakyas: React.FC = () => {
         layout="vertical"
         requiredMark={true}
         style={{ marginTop: '44px' }}
-        className="josefin-sans"
       >
         <Row gutter={16}>
           <Col xs={24} sm={12}>
@@ -131,7 +130,7 @@ const Chanakyas: React.FC = () => {
 
         <Form.Item>
           <div className="btn-form">
-            <Button type="primary" htmlType="submit" className="btn-submit">
+            <Button type="default" htmlType="submit" className="btn-submit">
               Submit
             </Button>
           </div>
