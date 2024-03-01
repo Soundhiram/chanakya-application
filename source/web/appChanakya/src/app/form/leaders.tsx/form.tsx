@@ -1,25 +1,31 @@
 import React, { useState } from 'react';
-import { Form, Input, Button, Col, Modal, Row, message } from 'antd';
+import { Form, Input, Button, Col, Modal, Row, message, Select } from 'antd';
 import { Leader } from '../../../interface/leaderInterface';
 import axios from 'axios';
 import './style.less';
 
 const Leaders: React.FC = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [selectedTags, setSelectedTags] = useState([]);
+
   const [form] = Form.useForm();
 
   const onFinish = async (values: Leader) => {
     try {
+      const socialMediaArray: string[] =
+        values.socialMedia as unknown as string[];
+      const socialMediaString = socialMediaArray.join(', ');
+      const updatedValues = { ...values, socialMedia: socialMediaString };
+
       const response = await axios.post(
         'http://localhost:3333/api/leader/create',
-        values
+        updatedValues
       );
       console.log('Leader created:', response.data);
       form.resetFields();
       message.success('Form submitted successfully!');
     } catch (error) {
       console.error('Error creating leader:', error);
-      message.success('Cheack Fields Correctly');
+      message.success('Check Fields Correctly');
     }
   };
 
@@ -122,7 +128,7 @@ const Leaders: React.FC = () => {
                 { required: true, message: 'Please input your social media!' },
               ]}
             >
-              <Input />
+              <Select mode="tags" />
             </Form.Item>
           </Col>
         </Row>

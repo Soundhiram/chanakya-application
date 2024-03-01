@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Input, Button, Row, Col, Modal, message } from 'antd';
+import { Form, Input, Button, Row, Col, Modal, message, Select } from 'antd';
 import axios from 'axios';
 import { Chanakya } from '../../../interface/leaderInterface';
 import './style.less';
@@ -10,9 +10,13 @@ const Chanakyas: React.FC = () => {
 
   const onFinish = async (values: Chanakya) => {
     try {
+      const socialMediaArray: string[] =
+        values.socialMedia as unknown as string[];
+      const socialMediaString = socialMediaArray.join(', ');
+      const updatedValues = { ...values, socialMedia: socialMediaString };
       const response = await axios.post(
         'http://localhost:3333/api/chanakya/create',
-        values
+        updatedValues
       );
       console.log('Leader created:', response.data);
       form.resetFields();
@@ -116,14 +120,14 @@ const Chanakyas: React.FC = () => {
 
         <Row gutter={16}>
           <Col xs={24} sm={12}>
-            <Form.Item
+          <Form.Item
               label="Social Media"
               name="socialMedia"
               rules={[
                 { required: true, message: 'Please input your social media!' },
               ]}
             >
-              <Input />
+              <Select mode="tags" />
             </Form.Item>
           </Col>
         </Row>
