@@ -3,10 +3,10 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { PrivateRoute } from './private-route';
 import { RoutingConstraints } from './constraints';
 import CombineModule from '../login/index';
-import InfluencerList from '../chanakya-list/list';
+import InfluencerList from '../chanakya-list/chanakya-list';
 import { Dashboard } from '../dashboard';
-import ChanakyaList from '../chanakya-list/list';
-import LeaderList from '../leaders-list/list';
+import ChanakyaList from '../chanakya-list/chanakya-list';
+import LeaderList from '../leaders-list/leader-list';
 
 const AppRoutes: React.FC = () => {
   const isAuthenticated = !!localStorage.getItem('token');

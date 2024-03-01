@@ -4,7 +4,7 @@ import { EyeOutlined, EditOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import './style.less';
 import { useNavigate } from 'react-router-dom';
-import DetailModal from './detail-influencer-model';
+import DetailModal from './detail-chanakya-model';
 import { Chanakya } from '../../interface/leaderInterface';
 
 const { Paragraph, Text, Title } = Typography;

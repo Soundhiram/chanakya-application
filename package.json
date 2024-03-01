@@ -5,7 +5,8 @@
   "scripts": {
     "api": "npx nx run apiChanakya:serve",
     "web": "npx nx run appChanakya:serve",
-    "admin": "npx nx run adminApp:serve"
+    "admin": "npx nx run adminApp:serve",
+    "build": "npx nx run apiChanakya:build "
   },
   "private": true,
   "devDependencies": {

@@ -5,10 +5,14 @@ const { join } = require('path');
 module.exports = {
   output: {
     path: join(__dirname, '../../../dist/source/web/adminApp'),
+    publicPath: '/'
+
     
   },
   devServer: {
     port: 4201,
+    historyApiFallback: true,
+
   },
   plugins: [
     new NxWebpackPlugin({
