@@ -15,7 +15,7 @@ export interface Chanakya {
     organisation: string;
     designation: string;
     city: string;
-    socialMedia: string;
+    socialMedia: string[];
   }
 export interface Subscriber {
     email: string;

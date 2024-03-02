@@ -8,32 +8,54 @@ import './style.less';
 const Chanakyas: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [form] = Form.useForm();
+  const [socialMediaFields, setSocialMediaFields] = useState<string[]>([]);
+
 
   const onFinish = async (values: Chanakya) => {
     try {
-      const socialMediaArray: string[] =
-        values.socialMedia as unknown as string[];
-      const socialMediaString = socialMediaArray.join(', ');
-      const updatedValues = { ...values, socialMedia: socialMediaString };
+      const socialMedia = socialMediaFields.map((item: string) => item.trim()).filter(Boolean);
+      const updatedValues = { ...values, socialMedia };
+
+      // You can perform other actions here before or after submitting the form
+
       const response = await axios.post(
         'http://localhost:3333/api/chanakya/create',
         updatedValues
       );
       console.log('Leader created:', response.data);
+
+      setSocialMediaFields([]);
+
       form.resetFields();
+      
       message.success('Form submitted successfully!');
     } catch (error) {
       console.error('Error creating leader:', error);
-      message.success('Cheack Fields Correctly');
+      message.error('Failed to submit form. Please try again later.');
     }
   };
 
+  const addSocialMediaField = () => {
+    setSocialMediaFields([...socialMediaFields, '']);
+  };
+
+  const handleSocialMediaChange = (value: string, index: number) => {
+    const newFields = [...socialMediaFields];
+    newFields[index] = value;
+    setSocialMediaFields(newFields);
+  };
+
+  const removeSocialMediaField = (index: number) => {
+    const newFields = [...socialMediaFields];
+    newFields.splice(index, 1);
+    setSocialMediaFields(newFields);
+  };
   return (
     <div>
       <Form
         form={form}
         name="basic"
-        initialValues={{ remember: true }}
+        initialValues={{ remember: true, socialMedia: [''] }}
         onFinish={onFinish}
         layout="vertical"
         requiredMark={true}
@@ -127,11 +149,24 @@ const Chanakyas: React.FC = () => {
                 { required: true, message: 'Please input your social media!' },
               ]}
             >
-              <Select mode="tags" />
+            {socialMediaFields.map((field, index) => (
+            <div key={index} style={{ marginBottom: '8px' }}>
+              <Input 
+                value={field}
+                onChange={(e) => handleSocialMediaChange(e.target.value, index)}
+                style={{ marginRight: '8px' }}
+              />
+              {index > 0 && (
+                <Button type="link" onClick={() => removeSocialMediaField(index)}>
+                  Remove
+                </Button>
+              )}
+            </div>
+          ))}
+              <Button type="dashed" onClick={addSocialMediaField} style={{ width: '100%' }}>Add Social Media Field</Button>
             </Form.Item>
           </Col>
         </Row>
-
         <Form.Item>
           <div className="btn-form">
             <Button type="default" htmlType="submit" className="btn-submit">
