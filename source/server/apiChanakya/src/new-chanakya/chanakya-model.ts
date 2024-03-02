@@ -7,7 +7,7 @@ export interface ChanakyaInterface extends Document {
   organisation: string;
   designation: string;
   city: string;
-  socialMedia: string;
+  socialMedia: [];
   archived: boolean;
 }
 
@@ -18,7 +18,7 @@ const ChanakyaSchema: Schema = new Schema({
   organisation: { type: String, required: true },
   designation: { type: String, required: true },
   city: { type: String, required: true },
-  socialMedia: { type: String, required: true },
+  socialMedia: { type: [], required: true },
 
   archived: { type: Boolean, default: false },
 });
