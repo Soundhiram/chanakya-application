@@ -36,7 +36,6 @@ const Chanakyas: React.FC = () => {
         onFinish={onFinish}
         layout="vertical"
         requiredMark={true}
-        style={{ marginTop: '44px' }}
       >
         <Row gutter={16}>
           <Col xs={24} sm={12}>
