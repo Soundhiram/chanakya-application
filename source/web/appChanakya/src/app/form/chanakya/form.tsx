@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Row, Col, Modal, message, Select } from 'antd';
+import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import { Chanakya } from '../../../interface/leaderInterface';
 import './style.less';
@@ -36,7 +37,6 @@ const Chanakyas: React.FC = () => {
         onFinish={onFinish}
         layout="vertical"
         requiredMark={true}
-        style={{ marginTop: '44px' }}
       >
         <Row gutter={16}>
           <Col xs={24} sm={12}>
@@ -119,7 +119,7 @@ const Chanakyas: React.FC = () => {
         </Row>
 
         <Row gutter={16}>
-          <Col xs={24} sm={12}>
+          <Col xs={24} sm={24}>
           <Form.Item
               label="Social Media"
               name="socialMedia"

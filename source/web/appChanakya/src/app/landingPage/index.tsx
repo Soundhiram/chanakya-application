@@ -78,7 +78,7 @@ export const LandingPage: React.FC = () => {
             <Card>
               <h1 className="col-h1 cizul-bold ">I'm Chanakya</h1>
               <div className="des-div">
-                <p className="des-para prime-font  cizul ">
+                <p className="des-para des-para-mobile prime-font  cizul ">
                   Are you a leader in your field? We introduce you to the World.
                 </p>
               </div>
@@ -90,7 +90,7 @@ export const LandingPage: React.FC = () => {
             <Card>
               <h1 className="col-h1  cizul-bold"> I want to be Chanakya</h1>
               <div className="des-div ">
-                <p className="des-para cizul prime-font">
+                <p className="des-para cizul des-para-mobile  prime-font">
                   You want to become a leader in your interested domain? Drop
                   your details here.
                 </p>
@@ -98,14 +98,16 @@ export const LandingPage: React.FC = () => {
               <Leaders />
             </Card>
           </Col>
-        </Row>
-        <div className="input-container">
+          <Col xl={24} lg={24} md={24} sm={24} xs={24}>
+     <div className="input-container">
           <div className="email-form">
             <h1>SUBSCRIBE</h1>
             <p className="p-subscribe Della">
               Subscribe our newsletter to stay updated every moment.
             </p>
           </div>
+          <div>
+
           <Form
           form={form}
             name="basic"
@@ -140,7 +142,10 @@ export const LandingPage: React.FC = () => {
               </Button>
             </Form.Item>
           </Form>
+          </div>
         </div>
+     </Col>
+        </Row>
       </section>
     </div>
   );
