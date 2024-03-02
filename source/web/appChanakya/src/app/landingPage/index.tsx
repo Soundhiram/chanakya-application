@@ -53,14 +53,14 @@ export const LandingPage: React.FC = () => {
           <p className="p-head cizul">Leadership. Business. Network.</p>
         </div>
         <div className="head-p animated fadeInUp">
-          <p className="para-head cizul">
+          <p className="para-head Della">
             Ignite your inner leadership with your mentors, industry experts,
             leaders, unicorn founders, and value-adding people. Young Chanakya
             is here to provide you an initial thrust. <span>🚀🚀</span>
           </p>
         </div>
-        <div className="head-p animated fadeInUp">
-          <h1 className="para-head-follow cizul">Follow Us</h1>
+        <div className="head-p animated fadeInUp Della">
+          <h1 className="para-head-follow ">Follow Us</h1>
           <div className="head-p animated fadeInUp">
             <InstagramOutlined className="icon" />
             <PinterestOutlined className="icon" />
@@ -73,7 +73,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       <section>
-        <Row gutter={[16, 16]} className="animated fadeIn">
+        <Row gutter={[16, 16]} className="animated fadeIn Della">
           <Col xl={12} lg={12} md={12} sm={24} xs={24}>
             <Card>
               <h1 className="col-h1 cizul-bold ">I'm Chanakya</h1>
@@ -102,7 +102,7 @@ export const LandingPage: React.FC = () => {
         <div className="input-container">
           <div className="email-form">
             <h1>SUBSCRIBE</h1>
-            <p className="p-subscribe">
+            <p className="p-subscribe Della">
               Subscribe our newsletter to stay updated every moment.
             </p>
           </div>
@@ -134,7 +134,7 @@ export const LandingPage: React.FC = () => {
               <Button
                 type="default"
                 htmlType="submit"
-                className="subs-btn btn-sub-submit"
+                className=""
               >
                 Submit
               </Button>

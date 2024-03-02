@@ -6,12 +6,21 @@
      outline: 0;
      box-sizing: border-box;
      color: #7f5539;
-     font-family: "Cinzel", serif;
      font-style: normal;
 
    }
 
    
+   .cizul {
+    font-family: "Cinzel", serif;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+  }
   
+  .Della{
+    font-family: "Della Respira", serif;
+    font-style: normal;
+  }
  
   
