@@ -11,7 +11,9 @@ const Leaders: React.FC = () => {
 
   const onFinish = async (values: Leader) => {
     try {
-      const socialMedia = socialMediaFields.map((item: string) => item.trim()).filter(Boolean);
+      const socialMedia = socialMediaFields
+        .map((item: string) => item.trim())
+        .filter(Boolean);
       const updatedValues = { ...values, socialMedia };
 
       // You can perform other actions here before or after submitting the form
@@ -25,14 +27,14 @@ const Leaders: React.FC = () => {
       setSocialMediaFields([]);
 
       form.resetFields();
-      
+
       message.success('Form submitted successfully!');
     } catch (error) {
       console.error('Error creating leader:', error);
       message.error('Failed to submit form. Please try again later.');
     }
   };
- 
+
   const addSocialMediaField = () => {
     setSocialMediaFields([...socialMediaFields, '']);
   };
@@ -54,7 +56,7 @@ const Leaders: React.FC = () => {
       <Form
         form={form}
         name="basic"
-        initialValues={{ remember: true,socialMedia: ['']  }}
+        initialValues={{ remember: true, socialMedia: [''] }}
         onFinish={onFinish}
         layout="vertical"
         requiredMark={true}
@@ -91,24 +93,21 @@ const Leaders: React.FC = () => {
         <Row gutter={16}>
           <Col xs={24} sm={12}>
             <Form.Item
-              label="WhatsApp Number"
-              name="watsappNumber"
-              rules={[
-                {
-                  required: true,
-                  message: 'Please input your WhatsApp number!',
-                },
-              ]}
-            >
-              <Input type="number" />
-            </Form.Item>
-          </Col>
-          <Col xs={24} sm={12}>
-            <Form.Item
               label="Organisation"
               name="organisation"
               rules={[
                 { required: true, message: 'Please input your organisation!' },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+          </Col>
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label="Designation"
+              name="designation"
+              rules={[
+                { required: true, message: 'Please input your designation!' },
               ]}
             >
               <Input />
@@ -119,13 +118,15 @@ const Leaders: React.FC = () => {
         <Row gutter={16}>
           <Col xs={24} sm={12}>
             <Form.Item
-              label="Designation"
-              name="designation"
+              label="Contact Number"
+              name="watsappNumber"
               rules={[
-                { required: true, message: 'Please input your designation!' },
+                {
+                  message: 'Please input your WhatsApp number!',
+                },
               ]}
             >
-              <Input />
+              <Input type="number" />
             </Form.Item>
           </Col>
           <Col xs={24} sm={12}>
@@ -148,21 +149,32 @@ const Leaders: React.FC = () => {
                 { required: true, message: 'Please input your social media!' },
               ]}
             >
-            {socialMediaFields.map((field, index) => (
-            <div key={index} style={{ marginBottom: '8px' }}>
-              <Input 
-                value={field}
-                onChange={(e) => handleSocialMediaChange(e.target.value, index)}
-                style={{ marginRight: '8px' }}
-              />
-              {index > 0 && (
-                <Button type="link" onClick={() => removeSocialMediaField(index)}>
-                  Remove
-                </Button>
-              )}
-            </div>
-          ))}
-              <Button type="dashed" onClick={addSocialMediaField} style={{ width: '100%' }}>Add Social Media Field</Button>
+              {socialMediaFields.map((field, index) => (
+                <div key={index} style={{ marginBottom: '8px' }}>
+                  <Input
+                    value={field}
+                    onChange={(e) =>
+                      handleSocialMediaChange(e.target.value, index)
+                    }
+                    style={{ marginRight: '8px' }}
+                  />
+                  {index > 0 && (
+                    <Button
+                      type="link"
+                      onClick={() => removeSocialMediaField(index)}
+                    >
+                      Remove
+                    </Button>
+                  )}
+                </div>
+              ))}
+              <Button
+                type="dashed"
+                onClick={addSocialMediaField}
+                style={{ width: '100%' }}
+              >
+                Add Social Media Field
+              </Button>
             </Form.Item>
           </Col>
         </Row>

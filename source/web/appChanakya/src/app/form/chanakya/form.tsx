@@ -10,13 +10,12 @@ const Chanakyas: React.FC = () => {
   const [form] = Form.useForm();
   const [socialMediaFields, setSocialMediaFields] = useState<string[]>([]);
 
-
   const onFinish = async (values: Chanakya) => {
     try {
-      const socialMedia = socialMediaFields.map((item: string) => item.trim()).filter(Boolean);
+      const socialMedia = socialMediaFields
+        .map((item: string) => item.trim())
+        .filter(Boolean);
       const updatedValues = { ...values, socialMedia };
-
-      // You can perform other actions here before or after submitting the form
 
       const response = await axios.post(
         'http://localhost:3333/api/chanakya/create',
@@ -27,7 +26,7 @@ const Chanakyas: React.FC = () => {
       setSocialMediaFields([]);
 
       form.resetFields();
-      
+
       message.success('Form submitted successfully!');
     } catch (error) {
       console.error('Error creating leader:', error);
@@ -91,8 +90,21 @@ const Chanakyas: React.FC = () => {
 
         <Row gutter={16}>
           <Col xs={24} sm={12}>
+            <Form.Item label="Organisation" name="organisation">
+              <Input />
+            </Form.Item>
+          </Col>
+          <Col xs={24} sm={12}>
+            <Form.Item label="Designation" name="designation">
+              <Input />
+            </Form.Item>
+          </Col>
+        </Row>
+
+        <Row gutter={16}>
+          <Col xs={24} sm={12}>
             <Form.Item
-              label="WhatsApp Number"
+              label="Contact Number"
               name="watsappNumber"
               rules={[
                 {
@@ -102,31 +114,6 @@ const Chanakyas: React.FC = () => {
               ]}
             >
               <Input type="number" />
-            </Form.Item>
-          </Col>
-          <Col xs={24} sm={12}>
-            <Form.Item
-              label="Organisation"
-              name="organisation"
-              rules={[
-                { required: true, message: 'Please input your organisation!' },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-          </Col>
-        </Row>
-
-        <Row gutter={16}>
-          <Col xs={24} sm={12}>
-            <Form.Item
-              label="Designation"
-              name="designation"
-              rules={[
-                { required: true, message: 'Please input your designation!' },
-              ]}
-            >
-              <Input />
             </Form.Item>
           </Col>
           <Col xs={24} sm={12}>
@@ -142,28 +129,39 @@ const Chanakyas: React.FC = () => {
 
         <Row gutter={16}>
           <Col xs={24} sm={24}>
-          <Form.Item
+            <Form.Item
               label="Social Media"
               name="socialMedia"
               rules={[
                 { required: true, message: 'Please input your social media!' },
               ]}
             >
-            {socialMediaFields.map((field, index) => (
-            <div key={index} style={{ marginBottom: '8px' }}>
-              <Input 
-                value={field}
-                onChange={(e) => handleSocialMediaChange(e.target.value, index)}
-                style={{ marginRight: '8px' }}
-              />
-              {index > 0 && (
-                <Button type="link" onClick={() => removeSocialMediaField(index)}>
-                  Remove
-                </Button>
-              )}
-            </div>
-          ))}
-              <Button type="dashed" onClick={addSocialMediaField} style={{ width: '100%' }}>Add Social Media Field</Button>
+              {socialMediaFields.map((field, index) => (
+                <div key={index} style={{ marginBottom: '8px' }}>
+                  <Input
+                    value={field}
+                    onChange={(e) =>
+                      handleSocialMediaChange(e.target.value, index)
+                    }
+                    style={{ marginRight: '8px' }}
+                  />
+                  {index > 0 && (
+                    <Button
+                      type="link"
+                      onClick={() => removeSocialMediaField(index)}
+                    >
+                      Remove
+                    </Button>
+                  )}
+                </div>
+              ))}
+              <Button
+                type="dashed"
+                onClick={addSocialMediaField}
+                style={{ width: '100%' }}
+              >
+                Add Social Media Field
+              </Button>
             </Form.Item>
           </Col>
         </Row>

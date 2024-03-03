@@ -24,7 +24,7 @@ export const LandingPage: React.FC = () => {
         'http://localhost:3333/api/subscriber/create',
         values
       );
-      
+
       console.log('Leader created:', response.data);
       form.resetFields();
       message.success({
@@ -62,12 +62,24 @@ export const LandingPage: React.FC = () => {
         <div className="head-p animated fadeInUp Della">
           <h1 className="para-head-follow ">Follow Us</h1>
           <div className="head-p animated fadeInUp">
-            <InstagramOutlined className="icon" />
-            <PinterestOutlined className="icon" />
-            <YoutubeOutlined className="icon" />
-            <FacebookOutlined className="icon" />
-            <LinkedinOutlined className="icon" />
-            <TwitterOutlined className="icon" />
+            <a href="https://instagram.com/youngchanakya">
+              <InstagramOutlined className="icon" />
+            </a>
+            <a href="https://in.pinterest.com/youngchanakya">
+              <PinterestOutlined className="icon" />
+            </a>
+            <a href="https://youtube.com/youngchanakya">
+              <YoutubeOutlined className="icon" />
+            </a>
+            <a href="https://facebook.com/youngchanakya">
+              <FacebookOutlined className="icon" />
+            </a>
+            <a href="https://linkedin.com/company/youngchanakya">
+              <LinkedinOutlined className="icon" />
+            </a>
+            <a href="https://x.com/youngchanakya">
+              <TwitterOutlined className="icon" />
+            </a>
           </div>
         </div>
       </section>
@@ -99,52 +111,51 @@ export const LandingPage: React.FC = () => {
             </Card>
           </Col>
           <Col xl={24} lg={24} md={24} sm={24} xs={24}>
-     <div className="input-container">
-          <div className="email-form">
-            <h1>SUBSCRIBE</h1>
-            <p className="p-subscribe Della">
-              Subscribe our newsletter to stay updated every moment.
-            </p>
-          </div>
-          <div>
-
-          <Form
-          form={form}
-            name="basic"
-            initialValues={{ remember: true }}
-            onFinish={onFinish}
-            layout="vertical"
-            requiredMark={false}
-            className="form-style"
-          >
-            <Form.Item
-              name="email"
-              rules={[
-                { required: true, message: 'Please input your email!' },
-                {
-                  type: 'email',
-                  message: 'Please enter a valid email address!',
-                },
-              ]}
-            >
-              <Input
-                placeholder="Enter your email address"
-                className="sub-input"
-              />
-            </Form.Item>
-            <Form.Item>
-              <Button
-                type="default"
-                htmlType="submit"
-                className=""
-              >
-                Submit
-              </Button>
-            </Form.Item>
-          </Form>
-          </div>
-        </div>
-     </Col>
+            <div className="input-container">
+              <div className="email-form">
+                <h1>SUBSCRIBE</h1>
+                <p className="p-subscribe Della">
+                  Subscribe our newsletter to stay updated every moment.
+                </p>
+              </div>
+              <div>
+                <Form
+                  form={form}
+                  name="basic"
+                  initialValues={{ remember: true }}
+                  onFinish={onFinish}
+                  layout="vertical"
+                  requiredMark={false}
+                  className="form-style"
+                >
+                  <Form.Item
+                    name="email"
+                    rules={[
+                      { required: true, message: 'Please input your email!' },
+                      {
+                        type: 'email',
+                        message: 'Please enter a valid email address!',
+                      },
+                    ]}
+                  >
+                    <Input
+                      placeholder="Enter your email address"
+                      className="sub-input"
+                    />
+                  </Form.Item>
+                  <Form.Item>
+                    <Button
+                      type="default"
+                      htmlType="submit"
+                      className="sub-submit"
+                    >
+                      Submit
+                    </Button>
+                  </Form.Item>
+                </Form>
+              </div>
+            </div>
+          </Col>
         </Row>
       </section>
     </div>
