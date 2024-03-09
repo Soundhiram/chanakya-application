@@ -57,21 +57,21 @@ const LeaderList: React.FC = () => {
       dataIndex: 'email',
       key: 'email',
     },
-    {
-      title: 'WhatsApp Number',
-      dataIndex: 'watsappNumber',
-      key: 'watsappNumber',
-    },
-    {
-      title: 'Organisation',
-      dataIndex: 'organisation',
-      key: 'organisation',
-    },
-    {
-      title: 'Designation',
-      dataIndex: 'designation',
-      key: 'designation',
-    },
+    // {
+    //   title: 'WhatsApp Number',
+    //   dataIndex: 'watsappNumber',
+    //   key: 'watsappNumber',
+    // },
+    // {
+    //   title: 'Organisation',
+    //   dataIndex: 'organisation',
+    //   key: 'organisation',
+    // },
+    // {
+    //   title: 'Designation',
+    //   dataIndex: 'designation',
+    //   key: 'designation',
+    // },
     {
       title: 'City',
       dataIndex: 'city',
